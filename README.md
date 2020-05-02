@@ -3,13 +3,17 @@
 
 # Installation
 ```bash
-docker -t build MediaBox .
-docker run -d -p 8000:8000 MediaBox
+docker -t build mediabox .
+docker run -d -p 8000:8000 mediabox
 ```
 or
 ```bash
 go build
 ./MediaBox
+```
+## Testing application
+```bash
+curl http://localhost:8000?name=Markus
 ```
 
 
