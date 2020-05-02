@@ -3,7 +3,7 @@
 
 
 ## On Errors
-#### packgage ....
+#### package XXX is not in GOROOT
 Make sure on Mac looks like when running "go env" as: 
 ```bash
 GOROOT=/usr/local/go
