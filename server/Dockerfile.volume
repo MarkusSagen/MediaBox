@@ -1,0 +1,33 @@
+
+# Make Docker volume to read from log
+
+FROM golang:latest
+
+LABEL maintainer="Markus Sagen <Markus.John.Sagen@gmail.com>"
+
+# Set current working dir in container
+WORKDIR /app
+
+# Build args
+ARG LOG_DIR=/app/logs
+
+# Create log dir
+RUN mkdir -p ${LOG_DIR}
+
+# env vars
+ENV LOG_FILE_LOCATION=${LOG_DIR}/app.log
+
+COPY go.mod go.sum ./
+
+COPY . .
+
+RUN go build -o main .
+
+EXPOSE 8000
+
+# Declare volume to mount
+VOLUME [${LOG_DIR}]
+
+# Run program produced by 'go install'
+CMD ["./main"]
+
