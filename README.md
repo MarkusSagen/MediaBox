@@ -1,6 +1,18 @@
 
 
 
+# Installation
+```bash
+docker -t build MediaBox .
+docker run -d -p 8000:8000 MediaBox
+```
+or
+```bash
+go build
+./MediaBox
+```
+
+
 
 ## On Errors
 #### package XXX is not in GOROOT
